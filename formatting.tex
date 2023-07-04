@@ -1,0 +1,28 @@
+%specialized section title
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont}
+{\thesection}{1em}{}
+\titlespacing{\section}
+{-4pc}{3.5ex plus .1ex minus .2ex}{1.5ex minus .1ex}
+
+%put extra space between each paragraph
+\setlength{\parskip}{0.75cm}
+
+%create a command so that the lettrine parameters are set once
+\newcommand{\aphor}[3]{
+    \lettrine[lines=2, lraise=0.15]{#1}{#2}
+    \textbf{{#3}}}
+
+\newskip\tufteskipamount
+\tufteskipamount=1.0\baselineskip plus 0.5ex minus 0.2ex
+
+\newcommand{\tuftebreak}{\par\ifdim\lastskip<\tufteskipamount
+  \removelastskip\penalty-100\tufteskip\fi}
+
+\newcommand{\tufteskip}{\vspace\tufteskipamount}
+
+\newcommand\newthought[1]{%
+   \tuftebreak
+   \noindent\textsc{#1}%
+}
