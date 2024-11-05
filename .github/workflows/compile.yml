@@ -25,7 +25,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run latexmk
-        run: "latexmk main.tex"
+        run: "latexmk --pdflatex main.tex"
       - name: add permissions
         run: "git config --global --add safe.directory /__w/10PointProgram/10PointProgram"
       - name: Store build timestamp
